@@ -1,0 +1,4 @@
+MAINTAINER Akams "akams"
+
+RUN git clone -b https://github.com/akams/esante-backend /
+esante-backend/
