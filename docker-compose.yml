@@ -1,4 +1,21 @@
-MAINTAINER Akams "akams"
-
-RUN git clone -b https://github.com/akams/esante-backend /
-esante-backend/
+version: "3"
+services:
+  client:
+    container_name: docker-client
+    restart: always
+    build: ./client
+    ports:
+      - '8080:3000'
+  app:
+    container_name: docker-api
+    restart: always
+    build: ./api
+    ports:
+      - '9000:3000'
+    links:
+      - mongo
+  mongo:
+    container_name: mongo
+    image: mongo
+    ports:
+      - '27017:27017'
