@@ -3,13 +3,13 @@ services:
   client:
     container_name: docker-client
     restart: always
-    build: ./client
+    build: ./e-sante
     ports:
       - '8080:3000'
   app:
     container_name: docker-api
     restart: always
-    build: ./api
+    build: ./esante-backend
     ports:
       - '9000:3000'
     links:
